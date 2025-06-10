@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hold Tider</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='tidtagning.js') }}" defer></script>
+</head>
+<body>
+    <h1 id="hold">Vælg hold</h1>
+    <div>
+    <label for="holdid-select">Vælg Hold:</label>
+    <select id="holdid-select" name="holdid">
+        {% for holdid, holdnavn, lab1, lab2, lab3, tid in holdliste %}
+            <option value="{{ holdid }}">{{ holdnavn }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+
+    <h1 id="Myh1">Stopwatch</h1>
+    <div id="container">
+        <div id="Display">
+          00:00:00
+        </div>
+        <div id="controls">
+          <button id="startBtn" onclick="start()">start</button>
+          <button id="stopBtn" onclick="stop()">stop</button>
+          <button id="resetBtn" onclick="reset()">reset</button>
+        </div>
+
+
+        <h1 id="Up">Upload tid</h1>
+    <div id="uploader">
+          <button id="upload" onclick="Upload()">Upload</button>
+
+</div>
+
+        </div>
+
+    <h2>Leaderboard</h2>
+
+
+
+        <div id="time_list">
+            <table>
+                {{ content | safe }}
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD</title>
+</head>
+<body>
+
+<h1>CRUD</h1>
+<hr>
+
+<h2>Opret nyt hold</h2>
+<form action="." method="get">
+    <label for="holdid">Hold ID:</label>
+    <input type="text" id="holdid" name="holdid"><br><br>
+
+    <label for="holdnavn">Holdnavn:</label>
+    <input type="text" id="holdnavn" name="holdnavn"><br><br>
+
+    <button type="submit" name="But" value="Create">Opret</button>
+</form>
+
+<hr>
+<h2>Seneste hold (maks 10)</h2>
+<form action="." method="get">
+    <button type="submit" name="But" value="Read">Læs data</button>
+</form>
+<table style="width:100%" border="1">
+    {% autoescape false %}
+    {{ content }}
+    {% endautoescape %}
+</table>
+
+<hr>
+<h2>Opdater hold</h2>
+<form action="." method="get">
+    <label for="holdid">Hold ID (eksisterende):</label>
+    <input type="text" id="holdid" name="holdid"><br><br>
+
+    <label for="holdnavn">Nyt holdnavn:</label>
+    <input type="text" id="holdnavn" name="holdnavn"><br><br>
+
+    <button type="submit" name="But" value="Update">Opdater</button>
+</form>
+
+<hr>
+<h2>Slet hold</h2>
+<form action="." method="get">
+    <label for="holdid">Hold ID:</label>
+    <input type="text" id="hold_id" name="holdid"><br><br>
+
+    <button type="submit" name="But" value="Delete">Slet</button>
+</form>
+
+<hr>
+<div class="button-row">
+  <form action="/walltid" method="get">
+    <button type="submit">wallfollow tidtagning</button>
+  </form>
+  <form action="/sumotid" method="get">
+    <button type="submit">sumo tidtagning</button>
+  </form>
+    <form action="/excel" method="get">
+    <button type="submit">Converter resultater til excel</button>
+  </form>
+</div>
+<hr>
+
+</body>
+</html>
+
