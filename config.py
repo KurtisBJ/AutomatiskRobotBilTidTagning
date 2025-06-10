@@ -1,0 +1,5 @@
+wifi_ssid = 'ITEK 2nd'
+wifi_password = '2nd_Semester_E24a'
+mqtt_server = b'0cf7151b3a114f89baefcd26973c2d45.s1.eu.hivemq.cloud'
+mqtt_username = b'kris789'
+mqtt_password = b'Dsx82yzv'
